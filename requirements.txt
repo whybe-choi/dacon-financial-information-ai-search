@@ -1,0 +1,17 @@
+transformers==4.43.3 
+datasets==2.18.0
+accelerate==0.29.3
+bitsandbytes==0.42.0
+kiwipiepy==0.17.1
+langchain==0.2.5
+langchain-core==0.2.10
+langchain_community==0.2.5
+langchain-huggingface==0.0.3
+llama-cpp-python==0.2.76
+faiss-cpu==1.8.0
+flashrank==0.2.6
+chromadb==0.5.0
+sentence-transformers==3.0.1
+python-dotenv
+pymupdf==1.24.9
+pymupdf4llm==0.0.10
