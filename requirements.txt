@@ -2,7 +2,6 @@ transformers==4.43.3
 datasets==2.18.0
 accelerate==0.29.3
 bitsandbytes==0.42.0
-kiwipiepy==0.17.1
 langchain==0.2.5
 langchain-core==0.2.10
 langchain_community==0.2.5
