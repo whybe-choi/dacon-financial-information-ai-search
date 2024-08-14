@@ -24,3 +24,29 @@ python src/vectordb.py
 ```bash
 python main.py
 ```
+
+## Directory Structure
+```
+.
+├── LICENSE
+├── README.md
+├── data
+│   ├── sample_submission.csv
+│   ├── test.csv
+│   ├── test_source
+│   ├── train.csv
+│   └── train_source
+├── faiss
+│   └── ...
+├── main.py
+├── models
+│   └── ...
+├── requirements.txt
+└── src
+    ├── llm.py
+    ├── prompt.py
+    ├── reranker.py
+    ├── retriever.py
+    ├── utils.py
+    └── vectordb.py
+```
