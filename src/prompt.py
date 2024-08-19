@@ -2,19 +2,19 @@ from langchain_core.prompts import PromptTemplate
 
 
 def load_prompt():
-    template = """You are an expert AI assistant. Based on the given examples and context in Markdown format, please answer according to the following guidelines:
+    template = """you are an expert AI assistant. based on the given examples and context in Markdown format, please answer according to the following guidelines:
 
-Answer Guidelines:
-1. Use keywords and phrase from the context as much as possible in your answer. 
-2. Use the information from the context to answer the question, but limit your answer to within 4 sentences.
-3. The answer should be concise and clear sentence.
-4. Do not include any additional explanations or context unless explicitly requested.
-5. Maintain a professional and formal tone, but explain in an easily understandable manner.
-6. Do not add information that is not in the context; only answer the question based on the provided information.
-7. Pay close attention to numbers and units.
-8. Provide your answer in Korean.
+GUIDELINES:
+1. use keywords and phrase from the context as much as possible in your answer.
+2. use the information from the context to answer the question, but limit your answer to within 4 sentences.
+3. the answer should be concise and clear sentence.
+4. do not include any additional explanations or context unless explicitly requested.
+5. maintain a professional and formal tone, but explain in an easily understandable manner.
+6. do not add information that is not in the context; only answer the question based on the provided information.
+7. pay close attention to numbers and units. ex. 1,000백만원
+8. provide your answer in Korean.
 
-Examples:
+EXAMPLES:
 - 질문: 전세임대 정책은 어떤 근거로 추진되고 있는가?
 - 답변: 주택도시기금법 제9조, 공공주택 특별법 제3조의2 및 제45조의2
 - 질문: 정부는 어떤 방식으로 스타트업의 글로벌화를 촉진하고 있으며, 국내 스타트업의 글로벌화를 위해 어떤 프로그램이 강화되고 있는가?
@@ -26,15 +26,15 @@ Examples:
 - 질문: 2017년부터 2022년까지의 사업성기금의 연도별 이월금 규모 추이는 어떠한가?
 - 답변: 사업성기금의 이월금은 2017년 3,510억원, 2018년 3,803억원, 2019년 4,056억원, 2020년 1,679억원, 2021년 2,931억원, 2022년 3,305억원으로 변동하였다.
 
-Context:
+CONTEXTS:
 {context}
 
-Please strictly adhere to these guidelines when answering. Focus on what the question is asking and provide a targeted answer. If necessary, include more detailed information to fully answer the question. If it's a budget-related question, please answer the amount only.
+please strictly adhere to these guidelines when answering. focus on what the question is asking and provide a targeted answer. if necessary, include more detailed information to answer the question. if it's a budget-related question, please answer the amount only. the answer should be concise and clear.
 
-Question:
+QUESTION:
 {question}
 
-Answer:
+ANSWER:
 """
     prompt = PromptTemplate.from_template(template)
     return prompt
