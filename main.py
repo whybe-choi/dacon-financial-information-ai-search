@@ -9,11 +9,13 @@ from src.llm import load_pipeline
 from src.reranker import load_reranker
 from src.retriever import load_dense_retriever
 from src.utils import format_docs, postprocess_answer
+from src.vectordb import load_embed_model_from_local
 from src.prompt import load_prompt
 
 
 def main():
     llm = load_pipeline("rtzr/ko-gemma-2-9b-it")
+    embed_model = load_embed_model_from_local("./models/bge-m3")
 
     df = pd.read_csv("./data/test.csv")
     df["Source"] = df["Source"].apply(lambda row: unicodedata.normalize("NFC", row))
@@ -24,7 +26,7 @@ def main():
 
     retrievers = {}
     for source in df["Source"].unique():
-        retriever = load_dense_retriever(source_mapping[source], "./models/bge-m3", 10)
+        retriever = load_dense_retriever(source_mapping[source], embed_model, 10)
         retrievers[source] = load_reranker(retriever, top_n=2)
 
     results = []
